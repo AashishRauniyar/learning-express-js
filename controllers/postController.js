@@ -5,7 +5,6 @@ let posts = [
 ]
 
 
-
 // @desc    Get all posts
 // @route   GET /api/posts
 export const getPosts = (req, res) => {
@@ -17,6 +16,7 @@ export const getPosts = (req, res) => {
     res.status(200).json(posts);
 
 }
+
 
 // @desc    Get single post
 // @route   GET /api/posts/:id
@@ -43,6 +43,7 @@ export const createPost = (req,res, next)=>{
     if(!newPost.title){
         const error = new Error(`Please Include a title` );
         error.status = 400;
+        // const e = "Jello";
         return next(error);
     }
     posts.push(newPost);
